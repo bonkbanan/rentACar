@@ -11,8 +11,9 @@
 <center>
     <table class="table table-dark table-sm" style="width:40%" align="centre">
         <thead class="table-light">
-        <th>IDCar</th>
+        <th>ID</th>
         <th>idClient</th>
+        <th>idCar</th>
         <th>brand</th>
         <th>dateRentStart</th>
         <th>dateRentEnd</th>
@@ -20,12 +21,13 @@
         </thead>
         <#list onRental as onRental>
             <tr>
-                <td>${onRental.idCar}</td>
-                <td>${onRental.idClient}</td>
+                <td>${onRental.id}</td>
+                <td>${onRental.car.getId()}</td>
+                <td>${onRental.clients.getId()}</td>
                 <td>${onRental.brand}</td>
                 <td>${onRental.dateRentStart}</td>
                 <td>${onRental.dateRentEnd}</td>
-                <td><button><a href="/ui/onrental/delete/${onRental.idCar}">Delete</a></button></td>
+                <td><button><a href="/ui/onrental/delete/${onRental.id}">Delete</a></button></td>
             </tr>
         </#list>
     </table>

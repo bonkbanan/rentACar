@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Clients {
+public class Client {
     private String id;
     private String surname;
     private String name;

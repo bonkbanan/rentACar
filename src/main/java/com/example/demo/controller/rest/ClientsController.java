@@ -1,6 +1,6 @@
 package com.example.demo.controller.rest;
 
-import com.example.demo.model.Clients;
+import com.example.demo.model.Client;
 import com.example.demo.services.clients.ClientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,5 +15,5 @@ public class ClientsController {
     ClientsService service;
 
     @RequestMapping("/clients")
-    List<Clients> getAll(){return service.getAll();}
+    List<Client> getAll(){return service.getAll();}
 }

@@ -16,10 +16,10 @@ public class ClientsWebUIController {
 
     @RequestMapping()
     String getAll(Model model){
-        model.addAttribute("client",service.getAll());
+        model.addAttribute("clients",service.getAll());
         return "clients";}
 
-    @RequestMapping("/delete{id}")
+    @RequestMapping("/delete/{id}")
     String delete(Model model, @PathVariable("id") String id){
         service.delete(id);
         model.addAttribute("clients",service.getAll());
