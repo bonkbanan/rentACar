@@ -1,18 +1,22 @@
 package com.example.demo.services.clients;
 
 import com.example.demo.model.Client;
+import com.example.demo.repository.ClientRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ClientsService {
     private List<Client> clients;
-    private List<Client> clients2;
+
+
+    @Autowired
+    ClientRepository repository;
 
     @PostConstruct
     void init(){
@@ -25,15 +29,18 @@ public class ClientsService {
                         new Client("5","Karlowna","Katya","Vasilivna","golovna 15","447458645864")
                 )
        );
-       clients2 = clients;
+       //repository.saveAll(clients);
     }
 
-    public List<Client> getAll() { return clients;}
+    public List<Client> getAll() { return repository.findAll();}
 
-    public List<Client> reNew(){return clients=clients2;}
+    public void reNew(){repository.saveAll(clients);}
 
-    public void delete(String id){
-        clients = clients.stream().filter(item->!item.getId().equals(id))
-                .collect(Collectors.toList());
-    }
+    public void delete(String id){ repository.deleteById(id);}
+
+    public void create(Client client) {repository.save(client);}
+
+    public Client get(String id){ return repository.findById(id).get();}
+
+    public void update(Client client) {repository.save(client); }
 }

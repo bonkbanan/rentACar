@@ -12,10 +12,16 @@ import lombok.Data;
 @AllArgsConstructor
 public class Car {
     private String id;
-    private String brand;
+    private Brand brand;
     private Integer priceCar;
     private Integer priceCarForRent;
     private String type;
 
+    public Car(String id) {
+        this.id = id;
+    }
 
+    public Car(Brand brand) {
+        this.brand = brand;
+    }
 }

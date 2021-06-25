@@ -1,29 +1,19 @@
-package com.example.demo.model;/*
-@USER: dench
-@DATE: 7.05
-@NAME: Clients
-@TIME: 21:04
-*/
+package com.example.demo.form;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.lang.annotation.Documented;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document
-public class Client {
-    @Id
+public class ClientForm {
     private String id;
     private String surname;
     private String name;
     private String secondName;
     private String street;
     private String telephoneNumber;
-
 }

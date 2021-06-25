@@ -30,11 +30,11 @@ public class OnRentalServices {
     void init(){
         rentals = new ArrayList<>(
                 Arrays.asList(
-                        new OnRental("1",carsServices.getAll().get(i),clientsService.getAll().get(i++), Brand.RENAULT, LocalDate.of(2021, Month.APRIL,5),LocalDate.of(2021,Month.MAY,15)),
-                        new OnRental("2",carsServices.getAll().get(i),clientsService.getAll().get(i++),Brand.TOYOTA, LocalDate.of(2021, Month.JANUARY,14),LocalDate.of(2021,Month.APRIL,5)),
-                        new OnRental("3",carsServices.getAll().get(i),clientsService.getAll().get(i++),Brand.NISSAN, LocalDate.of(2021, Month.FEBRUARY,8),LocalDate.of(2021,Month.JULY,20)),
-                        new OnRental("4",carsServices.getAll().get(i),clientsService.getAll().get(i++),Brand.TOYOTA, LocalDate.of(2021, Month.MARCH,1),LocalDate.of(2021,Month.MAY,1)),
-                        new OnRental("5",carsServices.getAll().get(i),clientsService.getAll().get(i++),Brand.SUZUKI, LocalDate.of(2021, Month.APRIL,6),LocalDate.of(2021,Month.NOVEMBER,15))
+                        new OnRental("1",carsServices.getAll().get(i),clientsService.getAll().get(i), carsServices.getAll().get(i++), LocalDate.of(2021, Month.APRIL,5),LocalDate.of(2021,Month.MAY,15)),
+                        new OnRental("2",carsServices.getAll().get(i),clientsService.getAll().get(i),carsServices.getAll().get(i++), LocalDate.of(2021, Month.JANUARY,14),LocalDate.of(2021,Month.APRIL,5)),
+                        new OnRental("3",carsServices.getAll().get(i),clientsService.getAll().get(i),carsServices.getAll().get(i++), LocalDate.of(2021, Month.FEBRUARY,8),LocalDate.of(2021,Month.JULY,20)),
+                        new OnRental("4",carsServices.getAll().get(i),clientsService.getAll().get(i),carsServices.getAll().get(i++), LocalDate.of(2021, Month.MARCH,1),LocalDate.of(2021,Month.MAY,1)),
+                        new OnRental("5",carsServices.getAll().get(i),clientsService.getAll().get(i),carsServices.getAll().get(i++), LocalDate.of(2021, Month.APRIL,6),LocalDate.of(2021,Month.NOVEMBER,15))
                 )
         );
         rentals2=rentals;
@@ -48,5 +48,9 @@ public class OnRentalServices {
     public void delete(String id){
         rentals=rentals.stream().filter(rent->!rent.getId().equals(id))
                 .collect(Collectors.toList());
+    }
+    public void create(OnRental onRental){
+        onRental.setId(i.toString());
+        rentals.add(onRental);
     }
 }

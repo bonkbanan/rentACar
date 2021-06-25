@@ -24,7 +24,7 @@
                 <td>${onRental.id}</td>
                 <td>${onRental.car.getId()}</td>
                 <td>${onRental.clients.getId()}</td>
-                <td>${onRental.brand}</td>
+                <td>${onRental.car.getBrand()}</td>
                 <td>${onRental.dateRentStart}</td>
                 <td>${onRental.dateRentEnd}</td>
                 <td><button><a href="/ui/onrental/delete/${onRental.id}">Delete</a></button></td>
@@ -32,7 +32,8 @@
         </#list>
     </table>
 </center>
-<center><button><a href="/index.html">back</a></button></center>
-<center><button><a href="/ui/onrental/renew">reNew</a></button></center>
+<center><button><a href="/index.html">Back</a></button></center>
+<center><button><a href="/ui/onrental/renew">ReNew</a></button></center>
+<center><button><a href="/ui/onrental/create">Create</a></button></center>
 </body>
 </html>

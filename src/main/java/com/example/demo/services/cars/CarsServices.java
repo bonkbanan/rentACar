@@ -1,7 +1,7 @@
 package com.example.demo.services.cars;
 
+import com.example.demo.model.Brand;
 import com.example.demo.model.Car;
-import com.example.demo.model.OnRental;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -19,11 +19,11 @@ public class CarsServices {
     void init(){
         cars=new ArrayList<>(
                 Arrays.asList(
-                        new Car("1","Toyota",31000,40,"Crossover"),
-                        new Car("2","Toyota",19000,26,"sedan"),
-                        new Car("3","Nissan",25000,30,"jeep"),
-                        new Car("4","Rols Roys",310000,700,"cabriolet"),
-                        new Car("5","Toyota",50000,90,"Crossover")
+                        new Car("1", Brand.RENAULT,31000,40,"Crossover"),
+                        new Car("2",Brand.TOYOTA,19000,26,"sedan"),
+                        new Car("3",Brand.NISSAN,25000,30,"jeep"),
+                        new Car("4",Brand.TOYOTA,310000,700,"cabriolet"),
+                        new Car("5",Brand.SUZUKI,50000,90,"Crossover")
                 )
         );
         cars2=cars;

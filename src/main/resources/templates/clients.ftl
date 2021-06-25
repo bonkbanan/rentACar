@@ -18,6 +18,7 @@
         <th>Street</th>
         <th>telephoneNumber</th>
         <th>Delete</th>
+        <th>Update</th>
         </thead>
         <#list clients as clients>
             <tr>
@@ -27,12 +28,14 @@
                 <td>${clients.secondName}</td>
                 <td>${clients.street}</td>
                 <td>${clients.telephoneNumber}</td>
-                <td><button><a href="/ui/clients/delete/${clients.id}">Delete</a></button></td>
+                <td><button type="button" class="btn btn-danger"><a href="/ui/clients/delete/${clients.id}">Delete</a></button></td>
+                <td><button type="button" class="btn btn-success"><a href="/ui/clients/update/${clients.id}">Update</a></button></td>
             </tr>
         </#list>
     </table>
 </center>
 <center><button><a href="/index.html">back</a></button></center>
 <center><button><a href="/ui/clients/renew">reNew</a></button></center>
+<center><button><a href="/ui/clients/create">Create</a></button></center>
 </body>
 </html>

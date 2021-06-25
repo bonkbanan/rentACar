@@ -1,11 +1,12 @@
 package com.example.demo.controller.ui;
 
+import com.example.demo.form.ClientForm;
+import com.example.demo.model.OnRental;
 import com.example.demo.services.onRental.OnRentalServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/ui/onrental")
@@ -31,4 +32,5 @@ public class OnRentalWebUIController {
         model.addAttribute("onRental",service.reNew());
         return "onRental";
     }
+
 }
