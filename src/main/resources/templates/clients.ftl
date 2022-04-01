@@ -12,35 +12,35 @@
 </head>
 <body>
 <div class="board">
-    <h3>List of clients</h3>
+    <h3 class="text">List of clients</h3>
 
         <table class="table table-dark table-sm" style="width:40%" align="centre">
             <thead class="table-light">
-            <th class="tdID">ID</th>
-            <th>Surname</th>
-            <th>Name</th>
-            <th>Second Name</th>
-            <th>Street</th>
-            <th>telephone Number</th>
-            <th>Delete</th>
-            <th>Update</th>
+            <th class="tdID"><h5>ID</h5></th>
+            <th class="text"><h5>Surname</h5></th>
+            <th class="text"><h5>Name</h5></th>
+            <th class="text"><h5>Second Name</h5></th>
+            <th class="text"><h5>Street</h5></th>
+            <th class="text"><h5>telephone Number</h5></th>
+            <th class="text"><h5>Delete</h5></th>
+            <th class="text"><h5>Update</h5></th>
             </thead>
             <#list clients as clients>
                 <tr>
-                    <td class="tdID">${clients.id}</td>
-                    <td>${clients.surname}</td>
-                    <td>${clients.name}</td>
-                    <td>${clients.secondName}</td>
-                    <td>${clients.street}</td>
-                    <td>${clients.telephoneNumber}</td>
-                    <td><button type="button" class="delete" onclick="window.location.href='/ui/clients/delete/${clients.id}'">Delete</button></td>
-                    <td><button type="button" class="update" onclick="window.location.href='/ui/clients/update/${clients.id}'">Update</button></td>
+                    <td class="tdID"><h5>${clients.id}</h5></td>
+                    <td class="text"><h5>${clients.surname}</h5></td>
+                    <td class="text"><h5>${clients.name}</h5></td>
+                    <td class="text"><h5>${clients.secondName}</h5></td>
+                    <td class="text"><h5>${clients.street}</h5></td>
+                    <td class="text"><h5>${clients.telephoneNumber}</h5></td>
+                    <td class="text"><button type="button" class="delete" onclick="window.location.href='/ui/clients/delete/${clients.id}'">Delete</button></td>
+                    <td class="text"><button type="button" class="update" onclick="window.location.href='/ui/clients/update/${clients.id}'">Update</button></td>
                 </tr>
             </#list>
         </table>
 </div>
 <div class="buttons">
-    <button type="button" onclick="history.back()">back</button>
+    <button type="button" onclick="window.location.href='/'">back</button>
     <button type="button" onclick="window.location.href='/ui/clients/renew'">re new</button>
     <button type="button" class="create" onclick="window.location.href='/ui/clients/create'">Create</button>
 </div>

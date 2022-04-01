@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/lists.css">
     <style>
-        tr{width: 1000px;}
+        tr{width: 1430px;}
         .tdID{
-            width: 130px;
+            width: 242px;
             justify-content: start
         }
         .tdID button{
@@ -26,41 +26,42 @@
             width: 0;
             height: 28px;
         }
+
     </style>
 </head>
 <body>
 <div class="board">
-<h3>List of cars on rental</h3>
+<h3 class="text">List of cars on rental</h3>
 
     <table class="table table-dark table-sm" style="width:40%" align="centre">
         <thead class="table-light">
         <th class="tdID">ID</th>
         <th class="tdID">idClient</th>
         <th class="tdID">idCar</th>
-        <th>brand</th>
-        <th>model</th>
-        <th>date Rent Start</th>
-        <th>date Rent End</th>
-        <th>Delete</th>
-        <th>Update</th>
+        <th class="text">brand</th>
+        <th class="text">model</th>
+        <th class="text">date Rent Start</th>
+        <th class="text">date Rent End</th>
+        <th class="text">Delete</th>
+        <th class="text">Update</th>
         </thead>
         <#list onRental as onRental>
             <tr>
-                <td class="tdID">${onRental.id}</td>
-                <td class="tdID"><button type="button" onclick="window.location.href='/ui/clients/${onRental.clients.getId()}'">${onRental.clients.getId()}</button></td>
-                <td class="tdID"><button type="button" onclick="window.location.href='/ui/car/${onRental.car.getId()}'">${onRental.car.getId()}</button></td>
-                <td>${onRental.car.getBrand()}</td>
-                <td>${onRental.car.getModel()}</td>
-                <td>${onRental.dateRentStart}</td>
-                <td>${onRental.dateRentEnd}</td>
-                <td><button type="button" class="delete" onclick="window.location.href='/ui/onrental/delete/${onRental.id}'">Delete</button></td>
-                <td><button type="button" class="update" onclick="window.location.href='/ui/onrental/update/${onRental.id}'">Update</button></td>
+                <td class="tdID"><h5>${onRental.id}</h5></td>
+                <td class="tdID"><button type="button" onclick="window.location.href='/ui/clients/${onRental.clients.getId()}'"><h5>${onRental.clients.getId()}</h5></button></td>
+                <td class="tdID"><button type="button" onclick="window.location.href='/ui/car/${onRental.car.getId()}'"><h5>${onRental.car.getId()}</h5></button></td>
+                <td><h5>${onRental.car.getBrand()}</h5></td>
+                <td><h5>${onRental.car.getModel()}</h5></td>
+                <td class="text"><h5>${onRental.dateRentStart}</h5></td>
+                <td class="text"><h5>${onRental.dateRentEnd}</h5></td>
+                <td class="text"><button type="button" class="delete" onclick="window.location.href='/ui/onrental/delete/${onRental.id}'">Delete</button></td>
+                <td class="text"><button type="button" class="update" onclick="window.location.href='/ui/onrental/update/${onRental.id}'">Update</button></td>
             </tr>
         </#list>
     </table>
 </div>
 <div class="buttons">
-    <button type="button" onclick="history.back()">back</button>
+    <button type="button" onclick="window.location.href='/'">back</button>
     <button type="button" onclick="window.location.href='/ui/onrental/renew'">re new</button>
     <button type="button" class="create" onclick="window.location.href='/ui/onrental/create'">Create</button>
 </div>

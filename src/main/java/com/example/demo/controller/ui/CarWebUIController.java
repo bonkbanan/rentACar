@@ -89,6 +89,6 @@ public class CarWebUIController {
     @RequestMapping("/{id}")
     String getOne(Model model, @PathVariable("id") String id){
         model.addAttribute("cars",service.getAll().stream().filter(el->el.getId().equals(id)).collect(Collectors.toList()));
-        return "cars";
+        return "extracars";
     }
 }

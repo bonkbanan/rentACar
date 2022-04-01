@@ -13,26 +13,26 @@
 </head>
 <body>
 <div class="board">
-    <h3>List of cars</h3>
+    <h3 class="text">List of cars</h3>
         <table class="table table-dark table-sm" style="width:40%" align="centre">
             <thead class="table-light">
-            <th class="tdID">ID</th>
-            <th>brand</th>
-            <th>model</th>
-            <th>price Car</th>
-            <th>price Car For Rent</th>
-            <th>type</th>
-            <th>Delete</th>
-            <th>Update</th>
+            <th class="tdID"><h5>ID</h5></th>
+            <th class="text"><h5>brand</h5></th>
+            <th class="text"><h5>model</h5></th>
+            <th class="text"><h5>price Car</h5></th>
+            <th class="text"><h5>price Car For Rent</h5></th>
+            <th class="text"><h5>type</h5></th>
+            <th class="text"><h5>Delete</h5></th>
+            <th class="text"><h5>Update</h5></th>
             </thead>
             <#list cars as cars>
                 <tr>
                     <td class="tdID">${cars.id}</td>
-                    <td>${cars.brand}</td>
-                    <td>${cars.model}</td>
-                    <td>${cars.priceCar}</td>
-                    <td>${cars.priceCarForRent}</td>
-                    <td>${cars.type}</td>
+                    <td><h5>${cars.brand}</h5></td>
+                    <td><h5>${cars.model}</h5></td>
+                    <td class="text"><h5>${cars.priceCar}</h5></td>
+                    <td class="text"><h5>${cars.priceCarForRent}</h5></td>
+                    <td class="text"><h5>${cars.type}</h5></td>
                     <td><button type="button" class="delete" onclick="window.location.href='/ui/car/delete/${cars.id}'">Delete</button></td>
                     <td><button type="button" class="update" onclick="window.location.href='/ui/car/update/${cars.id}'">Update</button></td>
 
@@ -41,7 +41,7 @@
         </table>
     </div>
 <div class="buttons">
-    <button type="button" onclick="history.back()">back</button>
+    <button type="button" onclick="window.location.href='/'">back</button>
     <button type="button" onclick="window.location.href='/ui/car/renew'">re new</button>
     <button type="button" class="create" onclick="window.location.href='/ui/car/create'">Create</button>
 </div>

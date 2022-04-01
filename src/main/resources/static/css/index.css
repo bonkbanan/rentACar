@@ -1,12 +1,13 @@
 center h2{
     font-family: "Sansita Swashed";
     color: brown;
+    font-size: 46px;
 }
 
 .buttons{
     margin: 0 auto;
-    width: 270px;
-    height: 50px;
+    width: 400px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,19 +27,19 @@ center h2{
 button{
     background: grey;
     border:  solid 2px grey;
-    height: 30px;
+    height: 50px;
     border-radius: 50px;
-    width: 80px;
+    width: 120px;
     margin: 0 auto;
     transition: 1.2s;
-    font-size: 15px;
+    font-size: 25px;
     color: white;
     font-family: "Sansita Swashed";
 }
 
 button:hover{
-    width: 85px;
-    height: 40px;
+    width: 130px;
+    height: 55px;
     transition: 0.7s;
     padding: 0px 5px 3px 5px;
 }

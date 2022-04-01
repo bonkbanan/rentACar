@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-<center><h1>Update On Rental</h1></center>
+<center><h3>Update On Rental</h3></center>
 <div>
     <fieldset>
         <form name="room" action="" method="POST">

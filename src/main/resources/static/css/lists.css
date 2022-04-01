@@ -11,19 +11,19 @@
 button{
     background: grey;
     border:  solid 2px grey;
-    height: 30px;
+    height: 40px;
     border-radius: 50px;
     width: 80px;
     margin: 0 auto;
     transition: 1.2s;
-    font-size: 15px;
     color: white;
+    font-size: 20px;
     font-family: "Sansita Swashed";
 }
 
 button:hover{
     width: 85px;
-    height: 40px;
+    height: 50px;
     transition: 0.7s;
     padding: 0px 5px 3px 5px;
 }
@@ -31,21 +31,20 @@ button:hover{
 tr{
     display: flex;
     align-items: center;
-    height: 55px;
+    height: 75px;
     margin: 0;
-    width: 940px;
+    width: 1121px;
 }
 td,th{
-    height: 55px;
-    width: 100px;
-    border: solid 1px grey;
-}
-td{
     display: flex;
     align-items: center;
+    height: 80px;
+    width: 125px;
+    border: solid 1px grey;
 }
+
 .tdID{
-    width: 265px;
+    width: 245px;
 }
 
 .board{
@@ -59,14 +58,43 @@ td{
 }
 h3{
     height: 50px;
+    font-weight: bold;
+}
+
+th h5{
+    font-weight: bold;
+}
+
+h5{
+    font-size: 19px;
+}
+
+.th{
+    display: flex;
+    align-items: center;
 }
 
 .buttons{
     margin: 0 auto;
-    width: 270px;
+    width: 300px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
+}
+
+.buttons button{
+    height: 50px;
+    width: 90px;
+}
+.buttons button:hover{
+    width: 95px;
+    height: 60px;
+    transition: 0.7s;
+    padding: 0px 5px 3px 5px;
+}
+
+.text, .tdID{
+    font-family: "Sansita Swashed";
 }

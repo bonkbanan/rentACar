@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
-<center><h1>Create Client</h1></center>
+<center><h3>Create Client</h3></center>
 <div>
     <fieldset>
         <form name="room" action="" method="POST">

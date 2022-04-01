@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
-<center><h1>Create On Rental</h1></center>
+<center><h3>Create On Rental</h3></center>
 <div>
     <fieldset>
         <form name="room" action="" method="POST">
