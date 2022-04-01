@@ -4,7 +4,6 @@ import com.example.demo.model.Client;
 import com.example.demo.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +12,6 @@ import java.util.List;
 @Service
 public class ClientsService {
     private List<Client> clients;
-
 
     @Autowired
     ClientRepository repository;
@@ -29,7 +27,7 @@ public class ClientsService {
                         new Client("5","Karlowna","Katya","Vasilivna","golovna 15","447458645864")
                 )
        );
-       //repository.saveAll(clients);
+//       repository.saveAll(clients);
     }
 
     public List<Client> getAll() { return repository.findAll();}
@@ -43,4 +41,6 @@ public class ClientsService {
     public Client get(String id){ return repository.findById(id).get();}
 
     public void update(Client client) {repository.save(client); }
+    
+
 }

@@ -1,0 +1,72 @@
+.table-dark .update,.create{
+    border:  solid 2px green;
+    background: green;
+}
+.delete{
+    background: brown;
+    border:  solid 2px brown;
+
+}
+
+button{
+    background: grey;
+    border:  solid 2px grey;
+    height: 30px;
+    border-radius: 50px;
+    width: 80px;
+    margin: 0 auto;
+    transition: 1.2s;
+    font-size: 15px;
+    color: white;
+    font-family: "Sansita Swashed";
+}
+
+button:hover{
+    width: 85px;
+    height: 40px;
+    transition: 0.7s;
+    padding: 0px 5px 3px 5px;
+}
+
+tr{
+    display: flex;
+    align-items: center;
+    height: 55px;
+    margin: 0;
+    width: 940px;
+}
+td,th{
+    height: 55px;
+    width: 100px;
+    border: solid 1px grey;
+}
+td{
+    display: flex;
+    align-items: center;
+}
+.tdID{
+    width: 265px;
+}
+
+.board{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.table-dark{
+    margin: 0 auto;
+}
+h3{
+    height: 50px;
+}
+
+.buttons{
+    margin: 0 auto;
+    width: 270px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}

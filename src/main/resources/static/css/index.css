@@ -1,0 +1,44 @@
+center h2{
+    font-family: "Sansita Swashed";
+    color: brown;
+}
+
+.buttons{
+    margin: 0 auto;
+    width: 270px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.cars{
+    background: brown;
+    border: solid 2px brown;
+}
+.clients{
+    background: green;
+    border: solid 2px green;
+
+}
+
+button{
+    background: grey;
+    border:  solid 2px grey;
+    height: 30px;
+    border-radius: 50px;
+    width: 80px;
+    margin: 0 auto;
+    transition: 1.2s;
+    font-size: 15px;
+    color: white;
+    font-family: "Sansita Swashed";
+}
+
+button:hover{
+    width: 85px;
+    height: 40px;
+    transition: 0.7s;
+    padding: 0px 5px 3px 5px;
+}

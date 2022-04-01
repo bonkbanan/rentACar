@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello</title>
+    <title>Rent a car</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
 </head>
 <body>
-<center><h1 style="color: #dc143c">Hello, World</h1></center>
-<center>
-    <h3 style="color: #dc143c">ui cotroller</h3>
-    <button><a href="/ui/car">car</a></button><br>
-    <button><a href="/ui/clients">clients</a></button><br>
-    <button><a href="/ui/onrental">on rental</a></button><br>
+<center><h2>Welcome To Rent A Car</h2></center>
+<div class="buttons">
+    <button type="button" class="cars" onclick="window.location.href='/ui/car'">Cars</button>
+    <button type="button" class="clients" onclick="window.location.href='/ui/clients'">Clients</button>
+    <button type="button" class="onrental" onclick="window.location.href='/ui/onrental'">On Rental</button>
 
-</center>
+</div>
 </body>
 </html>

@@ -2,38 +2,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>onRental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/lists.css">
+    <style>
+        tr{width: 1000px;}
+        .tdID{
+            width: 130px;
+            justify-content: start
+        }
+        .tdID button{
+            margin: 0;
+            width: 0px;
+            background: transparent;
+            border: transparent;
+            font-family: sans-serif;
+        }
+        .tdID button:hover{
+            width: 0;
+            height: 28px;
+        }
+    </style>
 </head>
 <body>
-<center><h3>List of cars on rental</h3></center>
-<center>
+<div class="board">
+<h3>List of cars on rental</h3>
+
     <table class="table table-dark table-sm" style="width:40%" align="centre">
         <thead class="table-light">
-        <th>ID</th>
-        <th>idClient</th>
-        <th>idCar</th>
+        <th class="tdID">ID</th>
+        <th class="tdID">idClient</th>
+        <th class="tdID">idCar</th>
         <th>brand</th>
-        <th>dateRentStart</th>
-        <th>dateRentEnd</th>
+        <th>model</th>
+        <th>date Rent Start</th>
+        <th>date Rent End</th>
         <th>Delete</th>
+        <th>Update</th>
         </thead>
         <#list onRental as onRental>
             <tr>
-                <td>${onRental.id}</td>
-                <td>${onRental.car.getId()}</td>
-                <td>${onRental.clients.getId()}</td>
+                <td class="tdID">${onRental.id}</td>
+                <td class="tdID"><button type="button" onclick="window.location.href='/ui/clients/${onRental.clients.getId()}'">${onRental.clients.getId()}</button></td>
+                <td class="tdID"><button type="button" onclick="window.location.href='/ui/car/${onRental.car.getId()}'">${onRental.car.getId()}</button></td>
                 <td>${onRental.car.getBrand()}</td>
+                <td>${onRental.car.getModel()}</td>
                 <td>${onRental.dateRentStart}</td>
                 <td>${onRental.dateRentEnd}</td>
-                <td><button><a href="/ui/onrental/delete/${onRental.id}">Delete</a></button></td>
+                <td><button type="button" class="delete" onclick="window.location.href='/ui/onrental/delete/${onRental.id}'">Delete</button></td>
+                <td><button type="button" class="update" onclick="window.location.href='/ui/onrental/update/${onRental.id}'">Update</button></td>
             </tr>
         </#list>
     </table>
-</center>
-<center><button><a href="/index.html">Back</a></button></center>
-<center><button><a href="/ui/onrental/renew">ReNew</a></button></center>
-<center><button><a href="/ui/onrental/create">Create</a></button></center>
+</div>
+<div class="buttons">
+    <button type="button" onclick="history.back()">back</button>
+    <button type="button" onclick="window.location.href='/ui/onrental/renew'">re new</button>
+    <button type="button" class="create" onclick="window.location.href='/ui/onrental/create'">Create</button>
+</div>
 </body>
 </html>

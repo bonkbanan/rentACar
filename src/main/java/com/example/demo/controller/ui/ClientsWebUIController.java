@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.stream.Collectors;
+
 
 @Controller
 @RequestMapping("/ui/clients")
@@ -77,6 +79,12 @@ public class ClientsWebUIController {
         client.setTelephoneNumber(clients.getTelephoneNumber());
         service.update(client);
         model.addAttribute("clients",service.getAll());
+        return "clients";
+    }
+
+    @RequestMapping("/{id}")
+    String getOne(Model model, @PathVariable("id") String id){
+        model.addAttribute("clients",service.getAll().stream().filter(el->el.getId().equals(id)).collect(Collectors.toList()));
         return "clients";
     }
 }
