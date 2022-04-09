@@ -46,7 +46,7 @@ public class OnRentalServices {
                         new OnRental("5",carsServices.getAll().get(i),clientsService.getAll().get(i++), "06.04.2022","15.11.2022")
                 )
         );
-        repository.saveAll(rentals);
+//        repository.saveAll(rentals);
     }
 
 
