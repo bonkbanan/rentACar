@@ -14,6 +14,7 @@ public class Car {
     private String id;
     private Brand brand;
     private String model;
+    private String carPlate;
     private Integer priceCar;
     private Integer priceCarForRent;
     private String type;
@@ -22,18 +23,25 @@ public class Car {
         this.id = id;
     }
 
-
-    public Car(String id, Brand brand, String model, Integer priceCar, Integer priceCarForRent, String type) {
+    public Car(String id, Brand brand, String model, String carPlate, Integer priceCar, Integer priceCarForRent, String type) {
         this.id = id;
         this.brand = brand;
         this.model = model;
+        this.carPlate = carPlate;
         this.priceCar = priceCar;
         this.priceCarForRent = priceCarForRent;
         this.type = type;
     }
 
-
     public Car() {
+    }
+
+    public String getCarPlate() {
+        return carPlate;
+    }
+
+    public void setCarPlate(String carPlate) {
+        this.carPlate = carPlate;
     }
 
     public String getId() {
@@ -90,6 +98,7 @@ public class Car {
                 "id='" + id + '\'' +
                 ", brand=" + brand +
                 ", model='" + model + '\'' +
+                ", carPlate='" + carPlate + '\'' +
                 ", priceCar=" + priceCar +
                 ", priceCarForRent=" + priceCarForRent +
                 ", type='" + type + '\'' +

@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.stream.Collectors;
 
 @Controller
@@ -56,7 +58,7 @@ public class OnRentalWebUIController {
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     String create(Model model, @ModelAttribute("onRental") OnRentalForm rentalForm){
         OnRental onRental= new OnRental();
-        onRental.setCar(carsServices.getAll().stream().filter(el->el.getId().equals(rentalForm.getCarId())).collect(Collectors.toList()).get(0));
+        onRental.setCar(carsServices.getAll().stream().filter(el->el.getCarPlate().equals(rentalForm.getCarPlate())).collect(Collectors.toList()).get(0));
         onRental.setClients(clientsService.getAll().stream().filter(el->el.getId().equals(rentalForm.getClientsId())).collect(Collectors.toList()).get(0));
         onRental.setDateRentStart(rentalForm.getDateRentStart());
         onRental.setDateRentEnd(rentalForm.getDateRentEnd());
@@ -69,8 +71,10 @@ public class OnRentalWebUIController {
     String update(Model model,  @PathVariable("id") String id){
         OnRental rental= service.get(id);
         OnRentalForm onRental = new OnRentalForm();
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
 
-        onRental.setCarId(rental.getCar().getId());
+
+        onRental.setCarPlate(rental.getCar().getCarPlate());
         onRental.setClientsId(rental.getClients().getId());
         onRental.setDateRentStart(rental.getDateRentStart());
         onRental.setDateRentEnd(rental.getDateRentEnd());
@@ -79,9 +83,10 @@ public class OnRentalWebUIController {
     }
 
     @RequestMapping(value = "/update/{id}",method = RequestMethod.POST)
-    String update(Model model, @ModelAttribute("onRental") OnRentalForm rentalForm){
+    String update(Model model, @ModelAttribute("onRental") OnRentalForm rentalForm, @PathVariable("id") String id){
+        service.delete(id);
         OnRental onRental= new OnRental();
-        onRental.setCar(carsServices.getAll().stream().filter(el->el.getId().equals(rentalForm.getCarId())).collect(Collectors.toList()).get(0));
+        onRental.setCar(carsServices.getCarForCarPlate(rentalForm.getCarPlate()).get(0));
         onRental.setClients(clientsService.getAll().stream().filter(el->el.getId().equals(rentalForm.getClientsId())).collect(Collectors.toList()).get(0));
         onRental.setDateRentStart(rentalForm.getDateRentStart());
         onRental.setDateRentEnd(rentalForm.getDateRentEnd());

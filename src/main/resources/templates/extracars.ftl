@@ -17,11 +17,12 @@
     <table class="table table-dark table-sm" style="width:40%" align="centre">
         <thead class="table-light">
         <th class="tdID"><h5>ID</h5></th>
-        <th class="text"><h5>brand</h5></th>
-        <th class="text"><h5>model</h5></th>
-        <th class="text"><h5>price Car</h5></th>
-        <th class="text"><h5>price Car For Rent</h5></th>
-        <th class="text"><h5>type</h5></th>
+        <th class="text"><h5>Brand</h5></th>
+        <th class="text"><h5>Model</h5></th>
+        <th class="text"><h5>Car Plate</h5></th>
+        <th class="text"><h5>Price Car</h5></th>
+        <th class="text"><h5>Price Car For Rent</h5></th>
+        <th class="text"><h5>Type</h5></th>
         <th class="text"><h5>Delete</h5></th>
         <th class="text"><h5>Update</h5></th>
         </thead>
@@ -30,6 +31,7 @@
                 <td class="tdID">${cars.id}</td>
                 <td><h5>${cars.brand}</h5></td>
                 <td><h5>${cars.model}</h5></td>
+                <td><h5>${cars.carPlate}</h5></td>
                 <td class="text"><h5>${cars.priceCar}</h5></td>
                 <td class="text"><h5>${cars.priceCarForRent}</h5></td>
                 <td class="text"><h5>${cars.type}</h5></td>

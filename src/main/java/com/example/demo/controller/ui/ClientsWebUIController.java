@@ -70,7 +70,8 @@ public class ClientsWebUIController {
     }
 
     @RequestMapping(value = "/update/{id}",method = RequestMethod.POST)
-    String update(Model model, @ModelAttribute("clients") ClientForm clients){
+    String update(Model model, @ModelAttribute("clients") ClientForm clients,@PathVariable("id") String id){
+        service.delete(id);
         Client client= new Client();
         client.setSurname(clients.getSurname());
         client.setName(clients.getName());

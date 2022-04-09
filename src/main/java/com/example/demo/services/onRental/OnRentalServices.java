@@ -10,10 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,17 +33,20 @@ public class OnRentalServices {
     OnRentalRepository repository;
 
     @PostConstruct
-    void init(){
+    void init() throws ParseException {
+        Date date =new Date();
+        Date date1 = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
         rentals = new ArrayList<>(
                 Arrays.asList(
-                        new OnRental("1",carsServices.getAll().get(i),clientsService.getAll().get(i++), LocalDate.of(2021, Month.APRIL,5),LocalDate.of(2021,Month.MAY,15)),
-                        new OnRental("2",carsServices.getAll().get(i),clientsService.getAll().get(i++), LocalDate.of(2021, Month.JANUARY,14),LocalDate.of(2021,Month.APRIL,5)),
-                        new OnRental("3",carsServices.getAll().get(i),clientsService.getAll().get(i++), LocalDate.of(2021, Month.FEBRUARY,8),LocalDate.of(2021,Month.JULY,20)),
-                        new OnRental("4",carsServices.getAll().get(i),clientsService.getAll().get(i++), LocalDate.of(2021, Month.MARCH,1),LocalDate.of(2021,Month.MAY,1)),
-                        new OnRental("5",carsServices.getAll().get(i),clientsService.getAll().get(i++), LocalDate.of(2021, Month.APRIL,6),LocalDate.of(2021,Month.NOVEMBER,15))
+                        new OnRental("1",carsServices.getAll().get(i),clientsService.getAll().get(i++),"09.04.2022", "15.05.2022"),
+                        new OnRental("2",carsServices.getAll().get(i),clientsService.getAll().get(i++), "14.01.2022","05.04.2022"),
+                        new OnRental("3",carsServices.getAll().get(i),clientsService.getAll().get(i++), "08.02.2022","20.07.2022"),
+                        new OnRental("4",carsServices.getAll().get(i),clientsService.getAll().get(i++), "20.03.2022","01.05.2022"),
+                        new OnRental("5",carsServices.getAll().get(i),clientsService.getAll().get(i++), "06.04.2022","15.11.2022")
                 )
         );
-        //repository.saveAll(rentals);
+        repository.saveAll(rentals);
     }
 
 

@@ -15,10 +15,10 @@
     <fieldset>
         <form name="room" action="" method="POST">
             <div class="board">
-                <h3>Car Id : <@spring.formInput "onRental.carId" "" "text"/></h3>
+                <h3>Car Plate : <@spring.formInput "onRental.CarPlate" "" "text"/></h3>
                 <h3>Client Id : <@spring.formInput "onRental.clientsId" "" "text"/></h3>
-                <h3>Date Rent Start : <@spring.formInput "onRental.dateRentStart" "" "text"/>(day/month/year)</h3>
-                <h3>Date Rent End : <@spring.formInput "onRental.dateRentEnd" "" "text"/>(day/month/year)</h3>
+                <h3>Date Rent Start : <@spring.formInput "onRental.dateRentStart" "" "text"/>(day.month.year)</h3>
+                <h3>Date Rent End : <@spring.formInput "onRental.dateRentEnd" "" "text"/>(day.month.year)</h3>
             </div>
             <div class="buttons">
                 <button type="button" onclick="history.back()">back</button>

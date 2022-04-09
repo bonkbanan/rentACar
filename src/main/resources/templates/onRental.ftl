@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/lists.css">
     <style>
-        tr{width: 1430px;}
+        tr{width: 1480px;}
         .tdID{
             width: 242px;
             justify-content: start
@@ -37,9 +37,9 @@
         <thead class="table-light">
         <th class="tdID">ID</th>
         <th class="tdID">idClient</th>
-        <th class="tdID">idCar</th>
-        <th class="text">brand</th>
-        <th class="text">model</th>
+        <th class="tdID">Car Plate</th>
+        <th class="text">Brand</th>
+        <th class="text">Model</th>
         <th class="text">date Rent Start</th>
         <th class="text">date Rent End</th>
         <th class="text">Delete</th>
@@ -49,7 +49,7 @@
             <tr>
                 <td class="tdID"><h5>${onRental.id}</h5></td>
                 <td class="tdID"><button type="button" onclick="window.location.href='/ui/clients/${onRental.clients.getId()}'"><h5>${onRental.clients.getId()}</h5></button></td>
-                <td class="tdID"><button type="button" onclick="window.location.href='/ui/car/${onRental.car.getId()}'"><h5>${onRental.car.getId()}</h5></button></td>
+                <td class="tdID"><button type="button" onclick="window.location.href='/ui/car/${onRental.car.getId()}'"><h5>${onRental.car.getCarPlate()}</h5></button></td>
                 <td><h5>${onRental.car.getBrand()}</h5></td>
                 <td><h5>${onRental.car.getModel()}</h5></td>
                 <td class="text"><h5>${onRental.dateRentStart}</h5></td>

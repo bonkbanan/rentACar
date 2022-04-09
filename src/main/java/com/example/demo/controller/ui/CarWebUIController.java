@@ -53,6 +53,7 @@ public class CarWebUIController {
         Car car= new Car();
         car.setBrand(cars.getBrand());
         car.setModel(cars.getModel());
+        car.setCarPlate(cars.getCarPlate());
         car.setPriceCar(cars.getPriceCar());
         car.setPriceCarForRent(cars.getPriceCarForRent());
         car.setType(cars.getType());
@@ -66,6 +67,7 @@ public class CarWebUIController {
         CarForm carForm = new CarForm();
         carForm.setBrand(car.getBrand());
         carForm.setModel(car.getModel());
+        carForm.setCarPlate(car.getCarPlate());
         carForm.setPriceCar(car.getPriceCar());
         carForm.setPriceCarForRent(car.getPriceCarForRent());
         carForm.setType(car.getType());
@@ -74,10 +76,12 @@ public class CarWebUIController {
     }
 
     @RequestMapping(value = "/update/{id}",method = RequestMethod.POST)
-    String update(Model model, @ModelAttribute("cars") CarForm cars){
+    String update(Model model, @ModelAttribute("cars") CarForm cars, @PathVariable("id") String id){
+        service.delete(id);
         Car car= new Car();
         car.setBrand(cars.getBrand());
         car.setModel(cars.getModel());
+        car.setCarPlate(cars.getCarPlate());
         car.setPriceCar(cars.getPriceCar());
         car.setPriceCarForRent(cars.getPriceCarForRent());
         car.setType(cars.getType());

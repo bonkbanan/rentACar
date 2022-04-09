@@ -18,6 +18,7 @@
                 <h3>(If brand contains 2 or more words, write "_" between them)</h3>
                 <h3>Brand : <@spring.formInput "cars.brand" "" "text"/></h3>
                 <h3>Model : <@spring.formInput "cars.model" "" "text"/></h3>
+                <h3>Car Plate : <@spring.formInput "cars.carPlate" "" "text"/></h3>
                 <h3>Price Car : <@spring.formInput "cars.priceCar" "" "text"/></h3>
                 <h3>Price Car For Rent : <@spring.formInput "cars.priceCarForRent" "" "text"/></h3>
                 <h3>Type : <@spring.formInput "cars.type" "" "text"/></h3>

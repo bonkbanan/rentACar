@@ -9,17 +9,20 @@ package com.example.demo.model;/*
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.xml.crypto.Data;
 import java.time.LocalDate;
+import java.util.Date;
+
 @Document
 public class OnRental {
     @Id
     private String id;
     private Car car;
     private Client clients;
-    private LocalDate dateRentStart;
-    private LocalDate dateRentEnd;
+    private String dateRentStart;
+    private String dateRentEnd;
 
-    public OnRental(String id, Car car, Client clients, LocalDate dateRentStart, LocalDate dateRentEnd) {
+    public OnRental(String id, Car car, Client clients, String dateRentStart, String dateRentEnd) {
         this.id = id;
         this.car = car;
         this.clients = clients;
@@ -29,6 +32,7 @@ public class OnRental {
 
     public OnRental() {
     }
+
 
 
     public String getId() {
@@ -56,19 +60,19 @@ public class OnRental {
     }
 
 
-    public LocalDate getDateRentStart() {
+    public String getDateRentStart() {
         return dateRentStart;
     }
 
-    public void setDateRentStart(LocalDate dateRentStart) {
+    public void setDateRentStart(String dateRentStart) {
         this.dateRentStart = dateRentStart;
     }
 
-    public LocalDate getDateRentEnd() {
+    public String getDateRentEnd() {
         return dateRentEnd;
     }
 
-    public void setDateRentEnd(LocalDate dateRentEnd) {
+    public void setDateRentEnd(String dateRentEnd) {
         this.dateRentEnd = dateRentEnd;
     }
 

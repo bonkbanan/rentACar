@@ -5,19 +5,29 @@ import com.example.demo.model.Brand;
 public class CarForm {
     private Brand brand;
     private String model;
+    private String carPlate;
     private int priceCar;
     private int priceCarForRent;
     private String type;
 
-    public CarForm(Brand brand, String model, int priceCar, int priceCarForRent, String type) {
+    public CarForm(Brand brand, String model, String carPlate, int priceCar, int priceCarForRent, String type) {
         this.brand = brand;
         this.model = model;
+        this.carPlate = carPlate;
         this.priceCar = priceCar;
         this.priceCarForRent = priceCarForRent;
         this.type = type;
     }
 
     public CarForm() {
+    }
+
+    public String getCarPlate() {
+        return carPlate;
+    }
+
+    public void setCarPlate(String carPlate) {
+        this.carPlate = carPlate;
     }
 
     public Brand getBrand() {
@@ -60,5 +70,15 @@ public class CarForm {
         this.type = type;
     }
 
-
+    @Override
+    public String toString() {
+        return "CarForm{" +
+                "brand=" + brand +
+                ", model='" + model + '\'' +
+                ", carPlate='" + carPlate + '\'' +
+                ", priceCar=" + priceCar +
+                ", priceCarForRent=" + priceCarForRent +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

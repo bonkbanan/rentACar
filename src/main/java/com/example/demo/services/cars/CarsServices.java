@@ -2,7 +2,6 @@ package com.example.demo.services.cars;
 
 import com.example.demo.model.Brand;
 import com.example.demo.model.Car;
-import com.example.demo.model.Client;
 import com.example.demo.repository.CarsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,11 +23,11 @@ public class CarsServices {
     void init(){
         cars=new ArrayList<>(
                 Arrays.asList(
-                        new Car("1", Brand.RENAULT,"Kadjar",31000,40,"Crossover"),
-                        new Car("2",Brand.TOYOTA,"Camry",19000,26,"sedan"),
-                        new Car("3",Brand.NISSAN,"Qasqai",25000,30,"jeep"),
-                        new Car("4",Brand.TOYOTA,"LC300",310000,700,"all-road"),
-                        new Car("5",Brand.SUZUKI,"Vitara",50000,90,"Crossover")
+                        new Car("1", Brand.RENAULT,"Kadjar","CE7654AX",31000,40,"Crossover"),
+                        new Car("2",Brand.TOYOTA,"Camry","CE0654BC",19000,26,"sedan"),
+                        new Car("3",Brand.NISSAN,"Qasqai","CE7865CE",25000,30,"jeep"),
+                        new Car("4",Brand.TOYOTA,"LC300","AA6456AX",310000,700,"all-road"),
+                        new Car("5",Brand.SUZUKI,"Vitara","AX7563CE",50000,90,"Crossover")
                 )
         );
 //        repository.saveAll(cars);
@@ -43,6 +42,8 @@ public class CarsServices {
     public void delete(String id){ repository.deleteById(id);}
 
     public Car get(String id){ return repository.findById(id).get();}
+
+    public List<Car> getCarForCarPlate(String carPlate) {return repository.findAll().stream().filter(el->el.getCarPlate().equals(carPlate)).collect(Collectors.toList());}
 
     public void update(Car car) {repository.save(car); }
 
